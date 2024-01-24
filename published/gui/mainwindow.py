@@ -66,8 +66,8 @@ class MainWindow(QMainWindow):
 
         self.result_save_button.clicked.connect(self.save_result_list)
 
-
         self.loadAppState()
+
 
     def loadAppState(self):
         data = settings.load_settings(self.settings_file)
@@ -125,13 +125,3 @@ class MainWindow(QMainWindow):
         with open(self.export_filename, 'w') as openfile:
             for word in word_list:
                 openfile.write(word + "\n")
-
-if __name__ == "__main__":
-    import sys
-    from PyQt6.QtWidgets import QApplication
-    app = QApplication(sys.argv)
-
-    window = MainWindow()
-    window.show()
-
-    app.exec()
