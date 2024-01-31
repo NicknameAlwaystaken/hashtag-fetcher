@@ -105,6 +105,8 @@ class MainWindow(QMainWindow):
         settings.save_settings(self.settings_file, data)
 
     def fetchHashtags(self):
+        self.hashtagFetcher.unique_hashtags = set()
+        
         selected_urls = self.websiteListWidget.get_links()
         for url in selected_urls:
             self.hashtagFetcher.fetch_hashtags(url)
